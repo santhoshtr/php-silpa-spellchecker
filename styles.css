@@ -1,0 +1,67 @@
+body {
+    /*background-color: #CCCCCC;*/
+}
+
+.spell_checker_cp_check {
+    width: 16px;
+    height: 16px;
+    padding: 3px;
+    background-image: url(images/spellcheck.png);
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.spell_check {
+    font-family: Courier;
+    font-size: 11px;    
+}
+
+.sc_misspelled {
+    color: #FF0000;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.suggestionBox {
+    border: 1px solid #000000;
+    background-color: #ADE4F8;
+    z-index: 5000;
+    padding: 5px;
+}
+
+.suggestionBox div.suggestion, .suggestionBox div.addToDictionary {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.corrected {
+    color: #009900;
+}
+
+.spell_checker_cp_resume {
+	width: 16px;
+	height: 16px;
+	padding: 3px;
+	background-image: url(images/resume.png);
+	background-repeat: no-repeat;
+	cursor: pointer;
+}
+
+.spell_checker_cp_working {
+	width: 16px;
+	height: 16px;
+	padding: 3px;
+	background-image: url(images/working.gif);
+	background-repeat: no-repeat;
+}
+
+
+.spell_checker_cp_result {
+    border: 1px solid #000000;
+    background-color: #FFFFFF;
+    font-family: Courier;
+    font-size: 11px;    
+    overflow: auto;
+    margin: 0;
+    padding: 0;
+}

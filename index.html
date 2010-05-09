@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+	   <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+	   <link rel="stylesheet" type="text/css" href="styles.css" />
+	   <script type="text/javascript" src="mootools-1.2-core-yc.js"></script>
+       <script type="text/javascript" src="spell_checker.js"></script>
+       <script type="text/javascript">
+           function checkForm() {
+               sc_spellCheckers.resumeAll();
+               return true;
+           }
+       </script>
+		<title></title>
+	</head>
+	<body>
+		<h1>Indic Online Spellchecker</h1>
+		<h3>An indic online spellchecker application. Supports all Indian languages and English</h3>
+	   <!--<a href="spell.zip">Download spell zip file</a>-->
+        <br />
+        <form action="submitTest.php" method="post" onsubmit="return checkForm();">
+            <p>
+                <textarea class="spell_check" rows="20" cols="100" name="box1">നീലതാമര calqulate</textarea>
+            </p>
+        </form>
+        <h3>This application is proudly powered by <a href="http://smc.org.in/silpa">Silpa</a>,
+         The Indian Language Computing Service.</h3><p> UI is adopted from <a href="http://www.broken-notebook.com/spell_checker/index.php">ajax-spell</a> project. </p>
+    </body>
+</html>
