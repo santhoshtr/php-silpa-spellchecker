@@ -14,7 +14,7 @@
  * GPLV3
  */
 require_once 'jsonRPCClient.php';
-if(!defined('SILPA_JSONRPC_SERVICE_URL')) define('SILPA_JSONRPC_SERVICE_URL','http://localhost:8080/JSONRPC');
+if(!defined('SILPA_JSONRPC_SERVICE_URL')) define('SILPA_JSONRPC_SERVICE_URL','http://silpa.org.in/JSONRPC');
 
 function silpaspell_create(){
     return new SilpaSpell();
@@ -27,6 +27,10 @@ function silpaspell_check(&$dict,$word){
 
 function silpaspell_suggest(&$dict, $word){
     return $dict->suggest($word);
+}
+
+function silpaspell_check_batch(&$dict, $word){
+    return $dict->check_batch($word);
 }
 
 /**
@@ -63,7 +67,7 @@ class SilpaSpell
         if (empty($word)) {
             return true;
         }
-        $suggestions = json_decode($this->service->execute('modules.Spellchecker.suggest',array($word)));
+        $suggestions = $this->service->execute('modules.Spellchecker.suggest',array($word));
         return $suggestions;
     }
 
@@ -78,10 +82,28 @@ class SilpaSpell
         if (empty($word)) {
             return true;
         }
-		if( json_decode($this->service->execute('modules.Spellchecker.check',array($word)))){
+		if( $this->service->execute('modules.Spellchecker.check',array($word))){
 			return true;
 		}
 		return false;
+    }
+
+    function check_batch($text)
+    {
+    	$text = trim($text);
+
+	if(empty($text))
+	{
+	    return $text;
+	}
+
+	$words = $this->service->execute('modules.Spellchecker.check_batch',array($text));
+	if(!empty($words))
+	{
+	    return $words;
+	}
+
+	return $text;
     }
 }
 ?>

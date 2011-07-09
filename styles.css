@@ -1,7 +1,17 @@
 body {
-    /*background-color: #CCCCCC;*/
+    background-color: #FFFFF;
+    margin-left:20%;
+    margin-right:20%;
 }
-
+h1, h2,h3,h4,h5 {
+    color:blue;
+    text-shadow: #6374AB 1px -1px 1px;
+    text-align:center;
+}
+textarea{
+   width:100%;
+   border-color:blue;
+}
 .spell_checker_cp_check {
     width: 16px;
     height: 16px;
